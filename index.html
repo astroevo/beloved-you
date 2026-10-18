@@ -234,7 +234,7 @@
   <div class="toprule"></div>
   <p class="sub">Your birth details in, your whole love reading out</p>
 
-  <ol class="steps"><li><span>1</span><div>Fill in <b>your own birth details</b> below and press <b>Calculate my chart</b>.</div></li><li><span>2</span><div>Tap <b>Open in ChatGPT</b>, or copy the prompt and paste it into <b>Claude</b> or <b>Gemini</b>.</div></li><li><span>3</span><div>When it asks <b>Shall I continue?</b>, answer <b>yes</b>. Three passes and it is done.</div></li></ol>
+  <ol class="steps"><li><span>1</span><div>Fill in <b>your own birth details</b> below and press <b>Calculate my chart</b>.</div></li><li><span>2</span><div>Tap <b>Open in ChatGPT</b>, or copy everything and paste it into <b>Claude</b> or <b>Gemini</b>.</div></li><li><span>3</span><div>When it asks <b>Shall I continue?</b>, answer <b>yes</b>. Three passes and it is done.</div></li></ol>
 
   <section class="calc" id="calc">
     <div class="field"><label for="cName">Your first name</label>
@@ -257,7 +257,7 @@
   <div id="after">
   <button id="gptBtn" type="button">Open in ChatGPT &nbsp;&#8599;</button>
   <div class="gap"></div>
-  <button id="copyBtn" class="line" type="button"><span id="copyLabel">Copy the prompt only</span></button>
+  <button id="copyBtn" class="line" type="button"><span id="copyLabel">Copy everything</span></button>
   <div class="gap"></div>
   <button id="claudeBtn" class="line" type="button">Open in Claude &nbsp;&#8599;</button>
   <div class="gap"></div>
@@ -330,7 +330,7 @@
     copyPrompt().then(function(){
       b.classList.add('done'); l.textContent='Copied';
       say('Now open a new chat in ChatGPT, Claude or Gemini and paste.');
-      setTimeout(function(){ b.classList.remove('done'); l.textContent='Copy the prompt only'; }, 2200);
+      setTimeout(function(){ b.classList.remove('done'); l.textContent='Copy everything'; }, 2200);
     });
   });
 
@@ -673,7 +673,7 @@ $('calcBtn').addEventListener('click', async function(){
       esc(s.rising) + ' rising &middot; Sun in ' + esc(s.sun) + ' &middot; Moon in ' + esc(s.moon) +
       '<br>' + esc(s.type) + ' &middot; profile ' + esc(s.profile) + ' &middot; ' + esc(s.authority) + ' authority' +
       (s.warning ? '<span class="warn">Your rising sign ' + WARN + '</span>' : ''),
-      'Your chart is ready. The prompt below now carries it.', p.name);
+      'Your chart is ready. Tap a button below to open your AI.', p.name);
   } catch(e) { msg(e.message || 'Something went wrong. Refresh the page and try again.'); }
 });
 
